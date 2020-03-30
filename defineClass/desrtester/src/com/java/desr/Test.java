@@ -50,8 +50,7 @@ public class Test {
 		innermap.put("value", "value");
 		Map outmap = TransformedMap.decorate(innermap, null, transformerChain);
 
-		Class cls = Class
-				.forName("sun.reflect.annotation.AnnotationInvocationHandler");
+		Class cls = Class.forName("sun.reflect.annotation.AnnotationInvocationHandler");
 		Constructor ctor = cls.getDeclaredConstructor(Class.class, Map.class);
 		ctor.setAccessible(true);
 		Object instance = ctor.newInstance(Retention.class, outmap);
